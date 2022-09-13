@@ -1,9 +1,13 @@
-import { tarea1 } from "./index.js";
+import { tiempo } from "./index.js";
 
-function main() {
-  console.time("tiempo de ejecucion");
-  console.log("hola soy", tarea1());
-  console.timeEnd("tiempo de ejecucion");
+function manejador() {
+  tiempo();
 }
 
-main();
+const numero1 = document.querySelector(".numero1");
+const numero2 = document.querySelector(".numero2");
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", manejador);
+
+export { numero1, numero2 };
