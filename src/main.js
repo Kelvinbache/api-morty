@@ -1,4 +1,4 @@
-import { contenedorDatos,buscandoDeEpisodios} from "./app.js";
+import { contenedorDatos, buscandoDeEpisodios } from "./app.js";
 
 export async function api() {
 
@@ -10,19 +10,15 @@ export async function api() {
 
   /*buscando los datos*/
   const jason = caracteristicas.json().then((mostra) => {
-    return objectos.push({ image: mostra.image });
+    return datos.push([mostra.image]);
   });
 
   const episodiosJson = episodios.json().then((otros) => {
-    return objectos.push(
-      { nombre: otros.name },
-      { episodio: otros.episode },
-      { lanzamiento: otros.air_date }
-    );
+    return datos.push([otros.name, otros.episode, otros.air_date]);
   });
 
   /*segundos que tarda la respuesta*/
-  setTimeout(()=>{contenedorDatos()},4000);
+  setTimeout(() => { contenedorDatos() }, 4000);
 }
 
 
@@ -30,7 +26,7 @@ export async function api() {
 
 
 
-export const objectos = [];
+export const datos = [];
 
 
 /*cosas que te piden en la aplicacion
