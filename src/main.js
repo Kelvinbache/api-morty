@@ -1,4 +1,4 @@
-import { contenedorDatos, buscandoDeEpisodios } from "./app.js";
+import {buscandoDeEpisodios , respuesta} from "./app.js";
 
 export async function api() {
 
@@ -6,31 +6,23 @@ export async function api() {
   const caracteristicas = await fetch(`https://rickandmortyapi.com/api/character/${buscandoDeEpisodios.value}`);
 
   /*llamando a los  episodios */
-  const episodios = await fetch(`https://rickandmortyapi.com/api/episode/`);
+  const episodios = await fetch(`https://rickandmortyapi.com/api/episode/${buscandoDeEpisodios.value}`);
 
   /*buscando los datos*/
   const jason = caracteristicas.json().then((mostra) => {
-    return datos.push([mostra.image]);
+    return respuesta(mostra.image);
   });
 
   const episodiosJson = episodios.json().then((otros) => {
-    return datos.push([otros.name, otros.episode, otros.air_date]);
+    return respuesta(otros.name, otros.episode, otros.air_date);
   });
 
-  /*segundos que tarda la respuesta*/
-  setTimeout(() => { contenedorDatos() }, 4000);
 }
 
-
-/*contenedor de los datos*/
-
-
-
-export const datos = [];
-
-
 /*cosas que te piden en la aplicacion
-1)mostrar nombre,dia de lanzamiento y mostrar a lazar la url
-2)mostra una imagen y episodio
 
+1)mostrar nombre,dia de lanzamiento y
+2)mostra una imagen y episodio
+3)cambiar los datos de entrada y salida
+4)diferenciar las longitudes
 */
