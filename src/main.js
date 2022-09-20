@@ -1,4 +1,4 @@
-import {buscandoDeEpisodios , respuesta} from "./app.js";
+import {buscandoDeEpisodios , respuestaNombreEpisodio,respuestaImagen} from "./app.js";
 
 export async function api() {
 
@@ -10,11 +10,11 @@ export async function api() {
 
   /*buscando los datos*/
   const jason = caracteristicas.json().then((mostra) => {
-    return respuesta(mostra.image);
+    return respuestaImagen(mostra.image);
   });
 
   const episodiosJson = episodios.json().then((otros) => {
-    return respuesta(otros.name, otros.episode, otros.air_date);
+    return respuestaNombreEpisodio(otros.name, otros.episode, otros.air_date);
   });
 
 }
@@ -25,4 +25,5 @@ export async function api() {
 2)mostra una imagen y episodio
 3)cambiar los datos de entrada y salida
 4)diferenciar las longitudes
+5)colocar manejador de errores
 */
