@@ -10,21 +10,15 @@ const contenedor = document.getElementById("contenedor");
 
 //funcion creadora de los datos
 function respuestaNombreEpisodio(...datos) {
-  const h2 = document.createElement("h1");
+  const ul = document.createElement("ul");
 
   setTimeout(() => {
     for (let i = 0; i < datos.length; i++) {
-      contenedor.innerHTML += `
-          <br><br>
-          nombre del episodio:${datos[0]} 
-          <br><br> 
-          episodio:${datos[1]}
-          <br><br>
-          dia de lanzamineto:${datos[2]}
-          <br><br>
-          `;
-      break;
+      const lista = document.createElement("li");
+      lista.textContent = datos[i];
+      ul.appendChild(lista);
     }
+    contenedor.appendChild(ul);
   }, 4000);
 
 }
@@ -38,8 +32,14 @@ function respuestaImagen(image) {
 }
 
 //funcion de cambio
-function cambiarTodo(){
-  if(contenedor.childNodes.length > 2 )contenedor.childNodes[0].remove();
+function cambiarTodo() {
+  //condicion para eliminar los primeros datos
+  if (contenedor.childNodes.length > 1) {
+
+      //tiempo de espera para eliminar los datos 
+      setTimeout(() => {console.log(contenedor.parentElement.lastChild)}, 4000)
+
+  };
 }
 
 /*exportando variables */
@@ -48,3 +48,4 @@ export {
   respuestaNombreEpisodio,
   respuestaImagen
 }
+

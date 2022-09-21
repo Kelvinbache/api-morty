@@ -20,10 +20,7 @@ export async function api() {
 }
 
 /*cosas que te piden en la aplicacion
-
-1)mostrar nombre,dia de lanzamiento y
-2)mostra una imagen y episodio
-3)cambiar los datos de entrada y salida
-4)diferenciar las longitudes
-5)colocar manejador de errores
+1)cambiar los datos de entrada y salida
+2)colocar manejador de errores
+3)
 */
