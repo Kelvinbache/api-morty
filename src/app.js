@@ -34,14 +34,15 @@ function respuestaImagen(image) {
 //funcion de cambio
 function cambiarTodo() {
   //condicion para eliminar los primeros datos
-  if (contenedor.childNodes.length > 1) {
+  if (contenedor.childNodes.length > 2) {
 
+    for (const borrar in contenedor.children) {
+      setTimeout(() => {console.log(borrar)},2000);     
+    }
+
+  }
       //tiempo de espera para eliminar los datos 
-      setTimeout(() => {console.log(contenedor.parentElement.lastChild)}, 4000)
-
-  };
 }
-
 /*exportando variables */
 export {
   buscandoDeEpisodios,
