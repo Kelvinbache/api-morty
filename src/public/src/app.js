@@ -5,12 +5,12 @@ const caja = document.getElementById("caja");
 
 /*llamando al boton para iniciar la busqueda de los archivos*/
 const boton = document.getElementById('boton');
-boton.addEventListener('click',inicio)
+boton.addEventListener('click',inicio);
 
 /*retorna un munero al azar*/
 function imagenAlAzar (){
     const numero = Math.floor(Math.random() * 200/3);
-    return numero
+    return numero;
 }
 
 /*funcion ejecutora para los achivos*/
@@ -29,7 +29,16 @@ imagen.setAttribute("src",imagenes);
 
 /*pegando las imagenes a la caja madre*/
   caja.appendChild(imagen);
+
+    setTimeout(cambiarImagen,1000);
 }
+
+/*Aqui estamos cambian las imagenes*/
+function cambiarImagen(){
+   if(caja.children.length > 1) caja.children[0].remove();
+}
+
+
 
 /*exportando la funcion para buscar las imagenes*/
 export{creadoraDeImagenes}
