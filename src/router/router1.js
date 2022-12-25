@@ -4,11 +4,11 @@ const express = require("express");
 const router = express.Router();
 
 router.get('/',(req,res)=>{
-     res.render('hello.ejs');
-})
+     res.send("sony inicio de la pagina")
+});
 
 router.get('/api-Morty',(req,res)=>{
-    res.send('hello i am from api-Morty ');
-})
+    res.render('hello.ejs')
+});
 
 module.exports = router;

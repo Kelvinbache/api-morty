@@ -9,13 +9,14 @@ boton.addEventListener('click',inicio);
 
 /*retorna un munero al azar*/
 function imagenAlAzar (){
-    const numero = Math.floor(Math.random() * 200/3);
+    const numero = Math.floor(Math.random() * 200/1)
     return numero;
 }
 
 /*funcion ejecutora para los achivos*/
 function inicio(){
    api(imagenAlAzar());
+   limiteDeTamano();
 }
 
 /*funcion para crear imagen y esperar las imagenes de la api*/
@@ -27,18 +28,23 @@ const imagen = document.createElement("img");
 /*colocando un atributo para pasar los enlaces*/
 imagen.setAttribute("src",imagenes);
 
+/*colocando un direccion a  la imagen*/
+imagen.setAttribute("class","imagen");
+
 /*pegando las imagenes a la caja madre*/
   caja.appendChild(imagen);
-
-    setTimeout(cambiarImagen,1000);
 }
 
-/*Aqui estamos cambian las imagenes*/
-function cambiarImagen(){
-   if(caja.children.length > 1) caja.children[0].remove();
+/*estamos poniendo limintes a las imagenes*/
+function  limiteDeTamano(){
+       if(caja.children.length >2 )boton.removeEventListener('click',inicio,false);
+       
+     /*tiempo de espera para mostral el mensaje al usuario*/
+     
+       if(caja.children.length > 2 ) setTimeout( ()=> {
+              return alert('PULSE F5 PARA VOLVER A BUSCAR MAS IMAGENES')
+    },2000);
 }
-
-
 
 /*exportando la funcion para buscar las imagenes*/
 export{creadoraDeImagenes}

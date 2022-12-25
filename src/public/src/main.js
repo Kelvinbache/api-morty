@@ -4,6 +4,7 @@ async function api(numero) {
 
   /*llamando las carecteristicas de los episodios */
   const caracteristicas = await fetch(`https://rickandmortyapi.com/api/character/${numero}`);
+  if(caracteristicas.status === 404) return console.error("LA BUSQUEDAD NO ENCONTRO NADA");
   
   //buscando el objecto json
   const jason =  caracteristicas.json().then((mostral)=> {
@@ -21,7 +22,5 @@ function manejadorDeRecorrido(resultado){
 export {api}
 
 /*cosas que te piden en la aplicacion
-4)controlador de errores para la busqueda de imagenes
-5)crear el nodo para mostral el enlace de la foto
-6)separar las imagenes y los enlaces 
+
 */
