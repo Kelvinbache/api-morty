@@ -48,3 +48,8 @@ function  limiteDeTamano(){
 
 /*exportando la funcion para buscar las imagenes*/
 export{creadoraDeImagenes}
+
+
+/*cosas por hacer esn esta parte 
+ * @augments imagen nesita incluir los estilos de la classe stilosDeHello.css
+ * */

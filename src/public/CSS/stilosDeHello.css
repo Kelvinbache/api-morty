@@ -1,0 +1,6 @@
+.imagen{
+    border-radius: 17px;
+   background: linear-gradient(145deg, #1c56dc, #2166ff);
+   box-shadow:  25px 25px 50px #1849bc,
+             -25px -25px 50px #2675ff;
+}

@@ -3,14 +3,30 @@
 <head>
 <meta charset="utf-8">
 <title>hello</title>
+    <link rel="stylesheet" href="css/stilosDeHello.css">
 </head>
 <body>
    <h1>hello word</h1>   
-    
+
+ <button class="volver"><a href ="/">volver al inicio</a></button>
+
    <div class="caja" id="caja"></div>
    <button id="boton">Buscar imagen</button>
    
-   
+   <%- include('partials/foot') %>  
+ <!--
+ 1)comenzar con la estructura html para las dos paginas
+ 2)incluir las imagenes 
+
+********estilos de css*********************************************
+1)comenzar con los estilos para fondo 
+2)hacer un slader con una imagen de la carpeta img
+3)poner efectos de salida de las imagenes
+4)cambiar el tipo de lentra de los titulos y textos
+5)poner establecer una estructura para,la vision de la pagina
+6)separar las imagenes una de otra
+
+-->
 <script src="src/app.js" type="module"></script>
 </body>
 </html>
