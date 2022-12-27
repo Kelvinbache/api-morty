@@ -20,6 +20,7 @@ app.set('views engine','ejs');
 
 /*ultilizando los archovos estaticos*/
 app.use(express.static(__dirname + '/public'))
+app.use("css",express.static(__dirname + '/public/CSS'));
 /*mini funciones para sistema de la aplicacion*/
 
 app.get('/',(req,res)=>{

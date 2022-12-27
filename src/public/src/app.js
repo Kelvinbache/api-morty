@@ -33,6 +33,9 @@ imagen.setAttribute("class","imagen");
 
 /*pegando las imagenes a la caja madre*/
   caja.appendChild(imagen);
+  
+   imagen.className = "imagen";
+ 
 }
 
 /*estamos poniendo limintes a las imagenes*/
